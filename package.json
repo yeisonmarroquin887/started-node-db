@@ -1,12 +1,13 @@
 {
-  "name": "create-express-sequelize",
+  "name": "express-sequelize-gen24",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "bin": "./bin/cli/js",
+  "bin": "./bin/cli.js",
   "scripts": {
     "start": "node src/server",
-    "dev": "nodemon src/server"
+    "dev": "nodemon src/server",
+    "postinstall": "npx husky install"
   },
   "keywords": [],
   "author": "",
