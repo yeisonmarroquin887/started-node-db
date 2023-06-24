@@ -36,14 +36,14 @@ test("GET ONE -> '/api/v1/actors/:id' should return status 200", async() => {
 });
 
  test("PUT -> '/api/v1/actors/:id' should return status 200 and res.body.firstName === actor.firstName", async() => {
-    const actor = {
+    const body = {
         firstName: "Jack"
         }
     const res = await supertest(app)
     .put(`/api/v1/actors/${actorId}`)
-    .send(actor)
+    .send(body)
     expect(res.status).toBe(200)
-    expect(res.body[1][0].firstName).toBe(actor.firstName)
+    expect(res.body[1][0].firstName).toBe(body.firstName)
  });
 
  test("DELETE -> '/api/v1/actors/:id' should return status code 204", async() => {

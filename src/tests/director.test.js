@@ -1,6 +1,5 @@
 const supertest = require("supertest")
 const app = require('../app')
-const movies = require('../models/Movie')
 require('../models')
 
 let directorId;
@@ -46,3 +45,8 @@ test("PUT -> '/api/v1/directors/:id' should return status 200 and res.body.name 
     expect(res.status).toBe(200)
     expect(res.body[1][0].firstName).toBe(body.firstName)
   });
+
+  test("DELETE -> '/api/v1/directors/:id' should return status code 204", async() => {
+    const res = await supertest(app).delete(`/api/v1/directors/${directorId}`)
+    expect(res.status).toBe(204)
+ })
