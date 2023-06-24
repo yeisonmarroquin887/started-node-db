@@ -48,6 +48,5 @@ test("GET ONE -> '/api/v1/actors/:id' should return status 200", async() => {
 
  test("DELETE -> '/api/v1/actors/:id' should return status code 204", async() => {
     const res = await supertest(app).delete(`/api/v1/actors/${actorId}`)
-    console.log(res.body)
     expect(res.status).toBe(204)
- })
+ }) 

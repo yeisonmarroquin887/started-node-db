@@ -21,7 +21,7 @@ const getOne = catchError(async(req, res) => {
 });
 
 const remove = catchError(async(req, res) => {
-    const {id} = req.body
+    const {id} = req.params
     const deleteActor = await Actor.destroy({where: {id}})
     if(!deleteActor) return res.status(404).json({message: "Actor not found"})
     return res.sendStatus(204)
